@@ -13,6 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+    
 
     /* ===== LIGHT MODE (default) ===== */
     :root {
@@ -709,6 +710,28 @@
       background: linear-gradient(135deg, var(--accent), #8f6bff);
       color: white;
     }
+    /* FIX FOR NAVBAR OVERLAP */
+.hero {
+  margin-top: 80px;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    margin-top: 120px;
+  }
+}
+@media (max-width: 700px) {
+  .navbar {
+    height: auto; /* flexible */
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    margin-top: 120px;
+  }
+}
+
   </style>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
