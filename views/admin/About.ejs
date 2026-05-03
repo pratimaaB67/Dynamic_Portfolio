@@ -1,0 +1,21 @@
+<%-include ("Navbar.ejs") %>
+
+<form action="/admin/save_about" method="post">
+<div class="container">
+    <div class="row p-3 rounded bg-white">
+        <div class="col-md-12">
+            <h1>About Section</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 fw-bold mt-5">
+            Enter About: <br>
+             <textarea name="about_details" id="" class="form-control mt-2"></textarea>
+        </div>
+    </div>
+    <div class="col-md-12 mt-5">
+        <button class="text-center btn btn-primary">Save</button>
+    </div>
+</div>
+</form>
+<%-include ("Footer.ejs") %>

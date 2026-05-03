@@ -1,0 +1,93 @@
+<%- include("Navbar.ejs") %>
+
+<div class="container mt-5">
+
+    <!-- Heading -->
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">✏️ Edit Education</h2>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+
+                    <form action="/admin/update_edu" method="post">
+
+                        <input type="hidden" name="id" value="<%= edu.id %>">
+
+                        <div class="row g-3">
+
+                            <!-- Course -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Course</label>
+                                <input type="text" name="course" 
+                                    value="<%= edu.course %>" 
+                                    class="form-control" required>
+                            </div>
+
+                            <!-- Institute -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Institute</label>
+                                <input type="text" name="institute" 
+                                    value="<%= edu.institute %>" 
+                                    class="form-control" required>
+                            </div>
+
+                            <!-- Start Year -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Start Year</label>
+                                <input type="number" name="start_year" 
+                                    value="<%= edu.start_year %>" 
+                                    class="form-control" required>
+                            </div>
+
+                            <!-- End Year -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">End Year</label>
+                                <input type="number" name="end_year" 
+                                    value="<%= edu.end_year %>" 
+                                    class="form-control" required>
+                            </div>
+
+                            <!-- Marks -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Marks / CGPA</label>
+                                <input type="text" name="marks" 
+                                    value="<%= edu.marks %>" 
+                                    class="form-control">
+                            </div>
+
+                            <!-- Coursework -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Coursework</label>
+                                <input type="text" name="coursework" 
+                                    value="<%= edu.coursework %>" 
+                                    class="form-control">
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="col-12 text-center mt-3">
+                                <button class="btn btn-success px-4 me-2">
+                                    ✅ Update
+                                </button>
+
+                                <a href="/admin/education" class="btn btn-secondary px-4">
+                                    ❌ Cancel
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<%- include("Footer.ejs") %>

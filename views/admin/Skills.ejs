@@ -1,0 +1,120 @@
+<%- include("Navbar.ejs") %>
+
+<div class="container">
+
+    <!-- 🔹 Form Section -->
+    <form action="/admin/save_skills" method="post">
+        <div class="row p-3 bg-white rounded">
+            <div class="col-md-12">
+                <h1 class="fw-bold text-center">Skills Section</h1>
+            </div>
+        </div>
+
+        <div class="row p-3 rounded bg-white mt-4">
+            <div class="col-md-6 fw-bold mt-3">
+                Enter Your Technical Skill:
+                <input type="text" name="Tskills" class="form-control" placeholder="Enter Technical Skill">
+            </div>
+
+            <div class="col-md-6 fw-bold mt-3">
+                Enter Your Soft Skill:
+                <input type="text" name="Sskills" class="form-control" placeholder="Enter Soft Skill">
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-primary px-4">Save</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- 🔹 Skills List -->
+    <div class="row bg-white rounded mt-5 p-4">
+
+        <h2 class="text-center fw-bold mb-4">Skills List</h2>
+
+        <!-- ================= TECHNICAL ================= -->
+        <div class="col-md-6">
+            <h4 class="text-center mb-3">💻 Technical Skills</h4>
+
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>SR.NO</th>
+                        <th>Skill</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% if(!techSkills || techSkills.length === 0){ %>
+                        <tr>
+                            <td colspan="3">No Technical Skills Added</td>
+                        </tr>
+                    <% } else { %>
+
+                        <% techSkills.forEach(function(item,i){ %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= item.skill_name %></td>
+                            <td>
+                                <a href="/admin/delete_skills/<%= item.id %>/T" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+
+                                <a href="/admin/edit_skills/<%= item.id %>/T" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ================= SOFT ================= -->
+        <div class="col-md-6">
+            <h4 class="text-center mb-3">🤝 Soft Skills</h4>
+
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>SR.NO</th>
+                        <th>Skill</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% if(!softSkills || softSkills.length === 0){ %>
+                        <tr>
+                            <td colspan="3">No Soft Skills Added</td>
+                        </tr>
+                    <% } else { %>
+
+                        <% softSkills.forEach(function(item,i){ %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= item.skill_name %></td>
+                            <td>
+                                <a href="/admin/delete_skills/<%= item.id %>/S" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+
+                                <a href="/admin/edit_skills/<%= item.id %>/S" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<%- include("Footer.ejs") %>

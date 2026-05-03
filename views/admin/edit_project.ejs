@@ -1,0 +1,72 @@
+<%- include("Navbar.ejs") %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <!-- Heading -->
+                    <h3 class="text-center text-primary fw-bold mb-4">
+                        ✏️ Edit Project
+                    </h3>
+
+                    <form action="/admin/update_project/<%= project.id %>" method="post">
+
+                        <!-- Title -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Project Title</label>
+                            <input type="text" name="title" value="<%= project.title %>" 
+                                   class="form-control" placeholder="Enter project title" required>
+                        </div>
+
+                        <!-- Technology -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Technology Used</label>
+                            <input type="text" name="technology" value="<%= project.technology %>" 
+                                   class="form-control" placeholder="e.g. HTML, Node.js" required>
+                        </div>
+
+                        <!-- GitHub Link -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">GitHub Link</label>
+                            <input type="url" name="link" value="<%= project.link %>" 
+                                   class="form-control" placeholder="https://github.com/..." required>
+                        </div>
+
+                        <!-- Live Link -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Live Project Link</label>
+                            <input type="url" name="live_link" value="<%= project.live_link %>" 
+                                   class="form-control" placeholder="https://yourproject.com">
+                        </div>
+
+                        <!-- Details -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Project Details</label>
+                            <textarea name="details" rows="4" 
+                                      class="form-control" placeholder="Enter project description" required><%= project.details %></textarea>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="/admin/projects" class="btn btn-secondary px-4">
+                                ⬅ Back
+                            </a>
+
+                            <button class="btn btn-success px-4 fw-bold">
+                                💾 Update Project
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include("Footer.ejs") %>

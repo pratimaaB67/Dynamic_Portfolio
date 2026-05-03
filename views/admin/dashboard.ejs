@@ -1,0 +1,87 @@
+<%- include("Navbar.ejs") %>
+
+<div class="container mt-4">
+
+  <!-- 🔹 Heading -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">📊 Admin Dashboard</h2>
+    <span class="text-muted">Welcome back 👋</span>
+  </div>
+
+  <!-- 🔹 Cards -->
+  <div class="row g-4">
+
+    <!-- Projects -->
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 text-center p-3">
+        <h5 class="text-muted">Projects</h5>
+        <h2 class="fw-bold text-primary">10</h2>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 text-center p-3">
+        <h5 class="text-muted">Skills</h5>
+        <h2 class="fw-bold text-success">15</h2>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 text-center p-3">
+        <h5 class="text-muted">Education</h5>
+        <h2 class="fw-bold text-warning">5</h2>
+      </div>
+    </div>
+
+    <!-- Contacts -->
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 text-center p-3">
+        <h5 class="text-muted">Messages</h5>
+        <h2 class="fw-bold text-danger">8</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔹 Quick Actions -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0 p-4">
+        <h4 class="mb-3">⚡ Quick Actions</h4>
+
+        <div class="d-flex gap-3 flex-wrap">
+
+          <a href="/admin/projects" class="btn btn-outline-primary">➕ Add Project</a>
+
+          <a href="/admin/skills" class="btn btn-outline-success">⚙ Manage Skills</a>
+
+          <a href="/admin/education" class="btn btn-outline-warning">🎓 Add Education</a>
+
+          <a href="/admin/contacts" class="btn btn-outline-danger">📩 View Messages</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Recent Activity (optional) -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0 p-4">
+        <h4 class="mb-3">🕒 Recent Activity</h4>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">New project added</li>
+          <li class="list-group-item">Skill updated</li>
+          <li class="list-group-item">New contact message received</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%- include("Footer.ejs") %>

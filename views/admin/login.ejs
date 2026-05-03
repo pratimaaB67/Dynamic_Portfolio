@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .login-right {
+    background: #f8f9fa;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .form-control {
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .btn-login {
+    border-radius: 30px;
+    padding: 12px;
+    font-weight: 600;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 20px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid h-100">
+  <div class="row h-100 g-0">
+
+    <!-- LEFT IMAGE -->
+    <div class="col-md-7 d-none d-md-flex align-items-center justify-content-center" style="background:#e9edf2;">
+  
+  <img src="/Images/11759820981klbzqabb2rb0bz8z3osphatxn54r5yhyfjwkvc0qyema42nazf5tgq48dqf45yoinjhensfup8xujgs4ymcjhvj0sv7tyuly3rj4-removebg-preview.png"
+       class="img-fluid"
+       style="max-width: 80%; height: auto;">
+       
+</div>
+
+    <!-- RIGHT LOGIN -->
+    <div class="col-md-5 d-flex align-items-center justify-content-center bg-light">
+
+      <div class="w-75">
+
+        <h2 class="fw-bold mb-3">Welcome Back 👋</h2>
+        <p class="text-muted mb-4">Login to continue</p>
+
+        <form action="/admin/do_login" method="POST">
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter email" required>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control form-control-lg" placeholder="Enter password" required>
+          </div>
+
+          <button type="submit" class="btn btn-dark btn-lg w-100">Login</button>
+
+          <p class="text-center mt-3">
+            Don't have an account?
+            <a href="/register">Register</a>
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<%-include ("Navbar.ejs") %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="bg-white rounded p-3 fw-bold text-center">📧 Contact List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped align-middle">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>SR.NO</th>
+                            <th>UserName</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <% contact.map(function(item,i){%>
+
+                        <tr>
+                            <td>
+                                <%=i+1%>
+                            </td>
+                            <td>
+                                <%= item.username || '-' %>
+                            </td>
+                            <td>
+                                <%= item.email || '-' %>
+                            </td>
+                            <td>
+                                <%= item.msg || '-' %>
+                            </td>
+                            <td>
+                                <a href="/admin/del_contact/<%= item.id%>" class="btn-outline-danger btn"><i
+                                        class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+
+                        <%})%>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%-include ("Footer.ejs") %>
